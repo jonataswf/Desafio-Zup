@@ -1,6 +1,6 @@
-package br.com.zup.desafio.repository;
+package br.com.zup.desafio.repository.usuarios;
 
-import br.com.zup.desafio.entity.UsuarioEntity;
+import br.com.zup.desafio.entity.usuarios.UsuarioEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

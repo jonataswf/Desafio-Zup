@@ -1,24 +1,30 @@
-package br.com.zup.desafio.model;
+package br.com.zup.desafio.entity.usuarios;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+import javax.persistence.*;
 
-public class UsuarioEntrada {
+@Entity(name = "usuarios")
+public class UsuarioEntity {
 
-    public UsuarioEntrada(){
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Integer id;
 
-    }
-
-    @JsonProperty(value = "nome")
+    @Column(name = "nome")
     private String nome;
 
-    @JsonProperty(value = "email")
+    @Column(name = "email")
     private String email;
 
-    @JsonProperty(value = "cpf")
+    @Column(name = "cpf")
     private String cpf;
 
-    @JsonProperty(value = "data_nascimento")
+    @Column(name = "data_nascimento")
     private String dataNascimento;
+
+    public Integer getId() {
+        return id;
+    }
 
     public String getNome() {
         return nome;

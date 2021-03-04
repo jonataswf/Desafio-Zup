@@ -1,8 +1,8 @@
 package br.com.zup.desafio.controller;
 
-import br.com.zup.desafio.facade.UsuarioFacade;
-import br.com.zup.desafio.model.UsuarioEntrada;
-import br.com.zup.desafio.model.UsuarioSaida;
+import br.com.zup.desafio.facade.usuarios.UsuarioFacade;
+import br.com.zup.desafio.model.usuarios.UsuarioEntrada;
+import br.com.zup.desafio.model.usuarios.UsuarioSaida;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

@@ -1,15 +1,12 @@
-package br.com.zup.desafio.model;
+package br.com.zup.desafio.model.usuarios;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class UsuarioSaida {
+public class UsuarioEntrada {
 
-    public UsuarioSaida() {
+    public UsuarioEntrada(){
 
     }
-
-    @JsonProperty(value = "id")
-    private Integer id;
 
     @JsonProperty(value = "nome")
     private String nome;
@@ -22,14 +19,6 @@ public class UsuarioSaida {
 
     @JsonProperty(value = "data_nascimento")
     private String dataNascimento;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getNome() {
         return nome;

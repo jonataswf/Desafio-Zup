@@ -1,8 +1,8 @@
-package br.com.zup.desafio.mapper;
+package br.com.zup.desafio.mapper.usuarios;
 
-import br.com.zup.desafio.entity.UsuarioEntity;
-import br.com.zup.desafio.model.UsuarioEntrada;
-import br.com.zup.desafio.model.UsuarioSaida;
+import br.com.zup.desafio.entity.usuarios.UsuarioEntity;
+import br.com.zup.desafio.model.usuarios.UsuarioEntrada;
+import br.com.zup.desafio.model.usuarios.UsuarioSaida;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
