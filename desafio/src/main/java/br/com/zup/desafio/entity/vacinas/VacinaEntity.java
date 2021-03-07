@@ -3,7 +3,7 @@ package br.com.zup.desafio.entity.vacinas;
 import br.com.zup.desafio.entity.usuarios.UsuarioEntity;
 
 import javax.persistence.*;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity(name = "vacinas")
 public class VacinaEntity {
@@ -17,7 +17,7 @@ public class VacinaEntity {
     private String nomeVacina;
 
     @Column(name = "data_aplicacao")
-    private LocalDate dataAplicacao;
+    private LocalDateTime dataAplicacao;
 
     @ManyToOne
     @JoinColumn(name = "fk_id_usuario", referencedColumnName = "id")
@@ -51,11 +51,11 @@ public class VacinaEntity {
         this.nomeVacina = nomeVacina;
     }
 
-    public LocalDate getDataAplicacao() {
+    public LocalDateTime getDataAplicacao() {
         return dataAplicacao;
     }
 
-    public void setDataAplicacao(LocalDate dataAplicacao) {
+    public void setDataAplicacao(LocalDateTime dataAplicacao) {
         this.dataAplicacao = dataAplicacao;
     }
 

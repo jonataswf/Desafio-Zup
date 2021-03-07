@@ -8,7 +8,7 @@ import br.com.zup.desafio.repository.vacinas.VacinaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Service
 public class VacinaFacade {
@@ -21,7 +21,7 @@ public class VacinaFacade {
 
     public VacinaSaida cadastroAplicacoesVacinas(VacinaEntrada vacinaEntrada) {
         VacinaEntity vacinaEntity = vacinaParser.toEntity(vacinaEntrada);
-        vacinaEntity.setDataAplicacao(LocalDate.now());
+        vacinaEntity.setDataAplicacao(LocalDateTime.now());
         return vacinaParser.toSaida(vacinaRepository.save(vacinaEntity));
     }
 }

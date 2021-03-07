@@ -1,7 +1,8 @@
 package br.com.zup.desafio.model.vacinas;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.time.LocalDate;
+
+import java.time.LocalDateTime;
 
 public class VacinaSaida {
 
@@ -12,7 +13,7 @@ public class VacinaSaida {
     private String nomeVacina;
 
     @JsonProperty(value = "data_aplicacao")
-    private LocalDate dataAplicacao;
+    private LocalDateTime dataAplicacao;
 
     @JsonProperty(value = "fk_id_usuario")
     private Integer usuario;
@@ -45,11 +46,11 @@ public class VacinaSaida {
         this.nomeVacina = nomeVacina;
     }
 
-    public LocalDate getDataAplicacao() {
+    public LocalDateTime getDataAplicacao() {
         return dataAplicacao;
     }
 
-    public void setDataAplicacao(LocalDate dataAplicacao) {
+    public void setDataAplicacao(LocalDateTime dataAplicacao) {
         this.dataAplicacao = dataAplicacao;
     }
 
