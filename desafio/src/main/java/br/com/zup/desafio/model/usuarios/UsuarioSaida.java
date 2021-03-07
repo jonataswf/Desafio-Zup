@@ -4,10 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class UsuarioSaida {
 
-    public UsuarioSaida() {
-
-    }
-
     @JsonProperty(value = "id")
     private Integer id;
 

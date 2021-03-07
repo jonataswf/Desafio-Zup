@@ -1,7 +1,7 @@
 package br.com.zup.desafio.facade.usuarios;
 
+import br.com.zup.desafio.Parse.UsuarioParser;
 import br.com.zup.desafio.entity.usuarios.UsuarioEntity;
-import br.com.zup.desafio.mapper.usuarios.UsuarioMapper;
 import br.com.zup.desafio.model.usuarios.UsuarioEntrada;
 import br.com.zup.desafio.model.usuarios.UsuarioSaida;
 import br.com.zup.desafio.repository.usuarios.UsuarioRepository;
@@ -14,8 +14,11 @@ public class UsuarioFacade {
     @Autowired
     UsuarioRepository usuarioRepository;
 
+    @Autowired
+    UsuarioParser usuarioParser;
+
     public UsuarioSaida cadastrarUsuario(UsuarioEntrada usuarioEntrada) {
-        UsuarioEntity usuarioEntity = UsuarioMapper.MAPPER.toEntity(usuarioEntrada);
-        return UsuarioMapper.MAPPER.toSaida(usuarioRepository.save(usuarioEntity));
+        UsuarioEntity usuarioEntity = usuarioParser.toEntity(usuarioEntrada);
+        return usuarioParser.toSaida(usuarioRepository.save(usuarioEntity));
     }
 }

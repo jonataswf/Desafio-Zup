@@ -4,10 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class UsuarioEntrada {
 
-    public UsuarioEntrada(){
-
-    }
-
     @JsonProperty(value = "nome")
     private String nome;
 
