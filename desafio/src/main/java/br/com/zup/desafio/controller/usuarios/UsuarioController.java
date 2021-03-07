@@ -1,14 +1,11 @@
-package br.com.zup.desafio.controller;
+package br.com.zup.desafio.controller.usuarios;
 
 import br.com.zup.desafio.facade.usuarios.UsuarioFacade;
 import br.com.zup.desafio.model.usuarios.UsuarioEntrada;
 import br.com.zup.desafio.model.usuarios.UsuarioSaida;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class UsuarioController {

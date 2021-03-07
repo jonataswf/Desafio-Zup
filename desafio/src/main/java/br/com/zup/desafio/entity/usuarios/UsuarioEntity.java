@@ -13,10 +13,10 @@ public class UsuarioEntity {
     @Column(name = "nome")
     private String nome;
 
-    @Column(name = "email")
+    @Column(name = "email", unique = true)
     private String email;
 
-    @Column(name = "cpf")
+    @Column(name = "cpf", unique = true)
     private String cpf;
 
     @Column(name = "data_nascimento")

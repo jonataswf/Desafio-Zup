@@ -1,4 +1,4 @@
-package br.com.zup.desafio.controller;
+package br.com.zup.desafio.controller.vacinas;
 
 import br.com.zup.desafio.facade.vacinas.VacinaFacade;
 import br.com.zup.desafio.model.vacinas.VacinaEntrada;
