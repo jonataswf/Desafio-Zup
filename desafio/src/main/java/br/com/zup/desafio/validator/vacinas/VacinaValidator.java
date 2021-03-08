@@ -10,11 +10,11 @@ public class VacinaValidator {
     public void validarVacina(VacinaEntrada vacinaEntrada) {
 
         if (vacinaEntrada.getNomeVacina() == null || vacinaEntrada.getNomeVacina().isBlank()) {
-            throw new DadosInvalidosException("Nome inválido");
+            throw new DadosInvalidosException("Nome vacina inválido");
         }
 
-        if (vacinaEntrada.getUsuario() == null || vacinaEntrada.getUsuario() <= 0) {
-            throw new DadosInvalidosException("Usuario inválido");
+        if (vacinaEntrada.getUsuario() == null || vacinaEntrada.getUsuario().isBlank()) {
+            throw new DadosInvalidosException("Email usuario inválido");
         }
     }
 }

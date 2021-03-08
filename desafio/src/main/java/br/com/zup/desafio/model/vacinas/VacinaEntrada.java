@@ -7,8 +7,8 @@ public class VacinaEntrada {
     @JsonProperty(value = "nome_vacina")
     private String nomeVacina;
 
-    @JsonProperty(value = "fk_id_usuario")
-    private Integer usuario;
+    @JsonProperty(value = "fk_email_usuario")
+    private String usuario;
 
     public String getNomeVacina() {
         return nomeVacina;
@@ -18,11 +18,11 @@ public class VacinaEntrada {
         this.nomeVacina = nomeVacina;
     }
 
-    public Integer getUsuario() {
+    public String getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Integer usuario) {
+    public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
 }

@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"Solange\",\r\n    \"email\": \"solange@teste.com\",\r\n    \"cpf\": \"111.111.111-11\",\r\n    \"data_nascimento\": \"01/01/2001\"\r\n}",
+							"raw": "{\r\n    \"nome\": \"Jonatas\",\r\n    \"email\": \"jonatas@teste.com\",\r\n    \"cpf\": \"111.111.111-11\",\r\n    \"data_nascimento\": \"01/01/2001\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -48,7 +48,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome_vacina\": \"Covaxin\",\r\n    \"fk_id_usuario\": 2\r\n}",
+							"raw": "{\r\n    \"nome_vacina\": \"Coronavac\",\r\n    \"fk_email_usuario\": \"jonatas@teste.com\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

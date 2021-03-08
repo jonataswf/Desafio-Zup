@@ -20,14 +20,14 @@ public class VacinaEntity {
     private LocalDateTime dataAplicacao;
 
     @ManyToOne
-    @JoinColumn(name = "fk_id_usuario", referencedColumnName = "id")
+    @JoinColumn(name = "email_usuario", referencedColumnName = "email")
     private UsuarioEntity usuario;
 
     @Column(name = "nome_usuario")
     private String nomeUsuario;
 
-    @Column(name = "email")
-    private String email;
+    @Column(name = "id_usuario")
+    private Integer idUsuario;
 
     @Column(name = "cpf")
     private String cpf;
@@ -75,12 +75,12 @@ public class VacinaEntity {
         this.nomeUsuario = nomeUsuario;
     }
 
-    public String getEmail() {
-        return email;
+    public Integer getIdUsuario() {
+        return idUsuario;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setIdUsuario(Integer idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     public String getCpf() {

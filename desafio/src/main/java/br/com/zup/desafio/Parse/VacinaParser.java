@@ -9,8 +9,6 @@ import br.com.zup.desafio.repository.usuarios.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.EntityNotFoundException;
-
 @Component
 public class VacinaParser {
 
@@ -20,15 +18,15 @@ public class VacinaParser {
     public VacinaEntity toEntity(VacinaEntrada vacinaEntrada) {
         VacinaEntity vacinaEntity = new VacinaEntity();
         try {
-            UsuarioEntity usuario = usuarioRepository.getOne(vacinaEntrada.getUsuario());
+            UsuarioEntity usuario = usuarioRepository.findByEmail(vacinaEntrada.getUsuario());
             vacinaEntity.setNomeVacina(vacinaEntrada.getNomeVacina());
             vacinaEntity.setUsuario(usuario);
             vacinaEntity.setNomeUsuario(usuario.getNome());
-            vacinaEntity.setEmail(usuario.getEmail());
+            vacinaEntity.setIdUsuario(usuario.getId());
             vacinaEntity.setCpf(usuario.getCpf());
             vacinaEntity.setDataNascimento(usuario.getDataNascimento());
-        } catch (EntityNotFoundException e) {
-            throw new DadosInvalidosException("Id Usuario não encontrado ou inválido");
+        } catch (NullPointerException e) {
+            throw new DadosInvalidosException("Email Usuario não encontrado ou inválido");
         }
         return vacinaEntity;
     }
@@ -38,9 +36,9 @@ public class VacinaParser {
         vacinaSaida.setId(vacinaEntity.getId());
         vacinaSaida.setNomeVacina(vacinaEntity.getNomeVacina());
         vacinaSaida.setDataAplicacao(vacinaEntity.getDataAplicacao());
-        vacinaSaida.setUsuario(vacinaEntity.getUsuario().getId());
+        vacinaSaida.setIdUsuario(vacinaEntity.getIdUsuario());
         vacinaSaida.setNomeUsuario(vacinaEntity.getNomeUsuario());
-        vacinaSaida.setEmail(vacinaEntity.getEmail());
+        vacinaSaida.setEmail(vacinaEntity.getUsuario().getEmail());
         vacinaSaida.setCpf(vacinaEntity.getCpf());
         vacinaSaida.setDataNascimento(vacinaEntity.getDataNascimento());
         return vacinaSaida;

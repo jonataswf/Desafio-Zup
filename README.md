@@ -11,7 +11,7 @@ Você deve construir apenas dois endpoints neste sistema, o cadastro do usuário
 
 - E-mail e CPF devem ser únicos.
 
-- Nome da vacina, id usuário e a data de aplicação devem ser obrigatórios.
+- Nome da vacina, e-mail usuário e a data de aplicação devem ser obrigatórios.
 - Possuir dois endpoints, cadastro do usuário e o cadastro da aplicação da vacina.
 - Cadastros corretos retornar Status 201
 - Cadastros incorretos retornar Status 400.

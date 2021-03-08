@@ -15,8 +15,8 @@ public class VacinaSaida {
     @JsonProperty(value = "data_aplicacao")
     private LocalDateTime dataAplicacao;
 
-    @JsonProperty(value = "fk_id_usuario")
-    private Integer usuario;
+    @JsonProperty(value = "id_usuario")
+    private Integer idUsuario;
 
     @JsonProperty(value = "nome_usuario")
     private String nomeUsuario;
@@ -54,12 +54,12 @@ public class VacinaSaida {
         this.dataAplicacao = dataAplicacao;
     }
 
-    public Integer getUsuario() {
-        return usuario;
+    public Integer getIdUsuario() {
+        return idUsuario;
     }
 
-    public void setUsuario(Integer usuario) {
-        this.usuario = usuario;
+    public void setIdUsuario(Integer idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     public String getNomeUsuario() {
