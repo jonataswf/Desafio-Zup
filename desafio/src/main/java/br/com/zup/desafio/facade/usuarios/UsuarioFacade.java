@@ -10,6 +10,7 @@ import br.com.zup.desafio.validator.usuarios.UsuarioValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.NonUniqueResultException;
 import java.util.Optional;
 
 @Service
@@ -26,12 +27,16 @@ public class UsuarioFacade {
 
     public UsuarioSaida cadastrarUsuario(UsuarioEntrada usuarioEntrada) {
         usuarioValidator.validarUsuario(usuarioEntrada);
-        Optional<UsuarioEntity> emailOuCpfCadastrado = usuarioRepository.
-                findByNomeOrCpf(usuarioEntrada.getNome(), usuarioEntrada.getCpf());
-        if (emailOuCpfCadastrado.isPresent()) {
+        try {
+            Optional<UsuarioEntity> emailOuCpfCadastrado = usuarioRepository.
+                    findByEmailOrCpf(usuarioEntrada.getEmail(), usuarioEntrada.getCpf());
+            if (emailOuCpfCadastrado.isPresent()) {
+                throw new DadosInvalidosException("Email e/ou CPF já cadastrado");
+            }
+            UsuarioEntity usuarioEntity = usuarioParser.toEntity(usuarioEntrada);
+            return usuarioParser.toSaida(usuarioRepository.save(usuarioEntity));
+        } catch (NonUniqueResultException e) {
             throw new DadosInvalidosException("Email e/ou CPF já cadastrado");
         }
-        UsuarioEntity usuarioEntity = usuarioParser.toEntity(usuarioEntrada);
-        return usuarioParser.toSaida(usuarioRepository.save(usuarioEntity));
     }
 }
